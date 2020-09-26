@@ -17,6 +17,7 @@ public class Principal {
 		String url = "jdbc:hsqldb:file:./src/main/resources/banco";
 		String user = "SA";
 		String password = "";
+		
 		try {
 			Connection connection = DriverManager.getConnection(url , user , password );
 			JFrame tool = new Janela(connection);
@@ -56,6 +57,10 @@ public class Principal {
 				+ "NOME VARCHAR(150))");
 		statement.addBatch("INSERT INTO ALUNO (MATRICULA,NOME) VALUES('20200201','PEDRO')");
 		statement.addBatch("INSERT INTO ALUNO (MATRICULA,NOME) VALUES('20200202','MARIA')");
+		statement.addBatch("INSERT INTO ALUNO (MATRICULA,NOME) VALUES('20200203','JOAO')");
+		statement.addBatch("INSERT INTO ALUNO (MATRICULA,NOME) VALUES('20200204','VICTOR')");
+		statement.addBatch("INSERT INTO ALUNO (MATRICULA,NOME) VALUES('20200205','JAMILE')");
+
 		statement.executeBatch();
 		statement.close();
 		
